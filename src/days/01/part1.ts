@@ -1,3 +1,5 @@
+import { parseRotations } from "./util";
+
 export function solve(input: string): number {  
   let result = 0;
 
@@ -18,12 +20,3 @@ export function solve(input: string): number {
 
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
-function parseRotations(lines: string[]): number[] {
-  let moves = []
-  for (const line of lines) {
-    let sign = line[0] == "R" ? 1 : -1
-    let steps = parseInt(line.slice(1, line.length))
-    moves.push(sign*steps)
-  }
-  return moves
-}
